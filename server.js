@@ -25,7 +25,6 @@ var pg = knex({
   });
 
 
-
 app.get("/", (req, res) => {
     pg.count('email').from('users')
       .then(emailcount => res.json(emailcount[0]))
