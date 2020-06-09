@@ -25,12 +25,12 @@ var pg = knex({
   });
 
 
-app.get("/", (req, res) => {
+/*app.get("/", (req, res) => {
     pg.count('email').from('users')
       .then(emailcount => res.json(emailcount[0]))
       .catch(err => res.json("Error fetching data"))
-})
-
+})*/
+app.get("/", (req, res) => {res.json("It is working")})
 app.post("/signin", (req,res) => { signin.signinhandler(req, res, pg, bcrypt)})
 app.post("/register", (req,res) => { register.registerhandler(req, res, pg, bcrypt)})
 app.get("/profile/:id", (req, res) => { profile.profilehandler(req, res, pg)})
